@@ -1,0 +1,13 @@
+<div class="topnav">
+  <p routerLink="/" style="cursor: pointer">Welcome!</p>
+  <div class="topnav-right">
+    <div *ngIf="!(authService.currentUserValue) else elseBlock">
+      <a routerLink="/login">Login</a>
+      <a routerLink="/register">Register</a>
+    </div>
+    <ng-template #elseBlock>
+      <a (click)="logout()">Logout</a>
+    </ng-template>
+  </div>
+
+</div>
